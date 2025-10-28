@@ -1,0 +1,8 @@
+name = "ae-invoicing-worker"
+main = "src/index.ts"
+compatibility_date = "2024-10-01"
+
+[vars]
+# NOTION_API_KEY = ""
+# STRIPE_SECRET_KEY = ""
+# RESEND_API_KEY = ""
