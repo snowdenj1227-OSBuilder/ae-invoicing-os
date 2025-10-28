@@ -1,23 +1,65 @@
 {
   "name": "ae-invoicing-os",
+  "version": "1.0.0",
+  "description": "Premium Freelancer OS - Complete invoicing, accounting, automation, and business management system",
   "private": true,
-  "workspaces": [
-    "worker"
-  ],
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"wrangler dev --local\"",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "worker:dev": "wrangler dev --local",
+    "worker:build": "wrangler build",
+    "worker:deploy": "wrangler deploy",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "setup": "ts-node scripts/setup-notion-dbs.ts",
+    "seed": "ts-node scripts/seed-data.ts"
   },
   "dependencies": {
-    "next": "14.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.2.0",
+    "typescript": "^5.3.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/node": "^20.0.0",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "framer-motion": "^10.16.0",
+    "recharts": "^2.10.0",
+    "lucide-react": "^0.292.0",
+    "@heroicons/react": "^2.0.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.2.0",
+    "zustand": "^4.4.0",
+    "@hookform/resolvers": "^3.3.0",
+    "react-hook-form": "^7.48.0",
+    "zod": "^3.22.0",
+    "axios": "^1.6.0",
+    "date-fns": "^2.30.0",
+    "react-hot-toast": "^2.4.1",
+    "html2pdf.js": "^0.10.1",
+    "jspdf": "^2.5.0",
+    "html2canvas": "^1.4.1",
+    "tesseract.js": "^4.1.0",
+    "@stripe/react-js": "^1.18.0",
+    "@stripe/js": "^1.46.0",
+    "node-notionhq": "^2.2.3",
+    "resend": "^0.16.0",
+    "node-cron": "^3.0.2",
+    "crypto-js": "^4.1.1"
   },
   "devDependencies": {
-    "typescript": "^5.6.2",
-    "tailwindcss": "^3.4.4",
-    "postcss": "^8.4.35",
-    "autoprefixer": "^10.4.20"
+    "eslint": "^8.55.0",
+    "eslint-config-next": "^14.2.0",
+    "@types/crypto-js": "^4.1.1",
+    "concurrently": "^8.2.2",
+    "ts-node": "^10.9.1",
+    "prisma": "^5.7.0",
+    "@prisma/client": "^5.7.0",
+    "wrangler": "^3.26.0"
   }
 }
